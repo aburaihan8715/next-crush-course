@@ -18,6 +18,7 @@ const BlogPost = () => {
                 <Image
                   className="object-cover rounded-full"
                   fill={true}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg"
                   alt="user image"
                 />

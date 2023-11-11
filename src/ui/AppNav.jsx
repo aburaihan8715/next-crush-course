@@ -1,7 +1,7 @@
 "use client";
 import DarkModeToggler from "@/components/DarkModeToggler";
-import useTheme from "@/hooks/useTheme";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const links = [
@@ -38,6 +38,9 @@ const links = [
 ];
 
 const AppNav = () => {
+  const path = usePathname();
+  // console.log(path);
+
   return (
     <header>
       <nav className="flex justify-between py-4 gap-2 items-center">
@@ -52,8 +55,8 @@ const AppNav = () => {
         <ul className="flex gap-2">
           {links.map((link) => (
             <li key={link.id}>
-              <Link className="hover:text-green-700 transition-all duration-100" href={link.url}>
-                {link.title}
+              <Link className={`${link.url === path && "active"} hover:text-green-700 transition-all duration-100`} href={link.url}>
+                {link.title} {}
               </Link>
             </li>
           ))}

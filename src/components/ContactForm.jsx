@@ -12,7 +12,7 @@ const ContactForm = () => {
       <div className="space-y-1">
         <label htmlFor="name">Name</label>
         <input
-          className="bg-[#111] border px-4 py-3 w-full rounded focus:outline-none focus:ring ring-gray-700"
+          className="bg-inherit border px-4 py-3 w-full rounded focus:outline-none focus:ring ring-inherit"
           type="text"
           name="name"
           id="name"
@@ -23,7 +23,7 @@ const ContactForm = () => {
       <div className="space-y-1">
         <label htmlFor="email">Email</label>
         <input
-          className="bg-[#111] border px-4 py-3 w-full rounded focus:outline-none focus:ring ring-gray-700"
+          className="bg-inherit border px-4 py-3 w-full rounded focus:outline-none focus:ring ring-inherit"
           type="email"
           name="email"
           id="email"
@@ -34,7 +34,7 @@ const ContactForm = () => {
       <div className="space-y-1">
         <label htmlFor="message">Message</label>
         <textarea
-          className="bg-[#111] border px-4 py-3 w-full rounded focus:outline-none focus:ring ring-gray-700"
+          className="bg-inherit border px-4 py-3 w-full rounded focus:outline-none focus:ring ring-inherit"
           placeholder="Enter message"
           name="message"
           id="message"

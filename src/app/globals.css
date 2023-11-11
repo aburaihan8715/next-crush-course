@@ -9,7 +9,14 @@
   .dark {
     @apply bg-[#111] text-[#bbb];
   }
+  .active {
+    @apply text-green-700;
+  }
 }
+
+/* .active {
+  color: green;
+} */
 
 .theme {
   transition: all 1s ease;
