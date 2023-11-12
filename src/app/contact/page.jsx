@@ -10,7 +10,13 @@ const Contact = () => {
 
       <div className="flex gap-10 items-center">
         <div className="custom-animation-up-down-t1 h-96 flex-1 ">
-          <Image className="w-full h-full object-contain" src={contactImg} alt="contact image" />
+          <Image
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="w-full h-full object-contain"
+            src={contactImg}
+            alt="contact image"
+          />
         </div>
 
         <div className="flex-1">

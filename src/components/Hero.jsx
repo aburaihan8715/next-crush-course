@@ -17,7 +17,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="custom-animation-up-down-t2 flex-1">
-          <Image className="w-full h-96 object-contain" src={heroImg} alt="hero image" />
+          <Image loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" className="w-full h-96 object-contain" src={heroImg} alt="hero image" />
         </div>
       </div>
     </section>

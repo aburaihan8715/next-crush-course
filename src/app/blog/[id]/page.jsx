@@ -1,16 +1,23 @@
 import Image from "next/image";
 import React from "react";
 
-const BlogPost = () => {
+async function getData(id) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+const BlogPost = async ({ params }) => {
+  const { id } = params;
+  const data = await getData(id);
   return (
     <section className="flex gap-10 flex-col">
       <div className="flex gap-10">
         <div className="flex-1 flex gap-4 flex-col">
-          <h1 className="text-2xl font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente voluptatum sit eligendi.</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, animi. Est delectus culpa corrupti nam ducimus. Fuga, voluptates quod!
-            Sunt dolor, autem explicabo vel doloribus tempora architecto aut inventore quaerat?
-          </p>
+          <h1 className="text-2xl font-semibold">{data.title}</h1>
+          <p>{data.body}</p>
 
           <div className="flex gap-3 items-center">
             <div>
@@ -18,6 +25,7 @@ const BlogPost = () => {
                 <Image
                   className="object-cover rounded-full"
                   fill={true}
+                  loading="lazy"
                   sizes="(max-width: 768px) 100vw, 33vw"
                   src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg"
                   alt="user image"
@@ -31,6 +39,8 @@ const BlogPost = () => {
           <div className="h-60 relative">
             <Image
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
               fill={true}
               src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg"
               alt="user image"

@@ -22,6 +22,8 @@ const DetailsItem = () => {
           <Image
             className="object-cover"
             fill={true}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 33vw"
             src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg"
             alt="banner image"
           />
