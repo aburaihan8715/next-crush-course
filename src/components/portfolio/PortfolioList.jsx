@@ -4,7 +4,7 @@ import PortfolioItem from "./PortfolioItem";
 const portfolioData = [
   {
     id: 1,
-    label: "illustration",
+    label: "illustrations",
     bgImage: 'bg-[url("/illustration.png")]',
   },
   {
@@ -14,12 +14,10 @@ const portfolioData = [
   },
   {
     id: 3,
-    label: "application",
+    label: "applications",
     bgImage: 'bg-[url("/apps.jpg")]',
   },
 ];
-
-// console.log(portfolio1);
 
 const PortfolioList = () => {
   return (

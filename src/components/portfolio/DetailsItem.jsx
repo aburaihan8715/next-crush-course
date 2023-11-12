@@ -2,15 +2,12 @@ import LinkBtn from "@/ui/LinkBtn";
 import Image from "next/image";
 import React from "react";
 
-const DetailsItem = () => {
+const DetailsItem = ({ item }) => {
   return (
     <div className="flex gap-8 items-center odd:flex-row-reverse">
       <div className="flex-1">
-        <h2 className="text-2xl font-semibold capitalize mb-3">creative portfolio</h2>
-        <p className="mb-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus consequuntur nemo quia accusantium explicabo ab placeat, delectus
-          illum sequi corrupti!
-        </p>
+        <h2 className="text-2xl font-semibold capitalize mb-3">{item.title}</h2>
+        <p className="mb-2">{item.desc}</p>
 
         <div>
           <LinkBtn text={`see more`} url={`#`} />
@@ -19,14 +16,7 @@ const DetailsItem = () => {
 
       <div className="flex-1">
         <div className="relative w-full h-80">
-          <Image
-            className="object-cover"
-            fill={true}
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 33vw"
-            src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg"
-            alt="banner image"
-          />
+          <Image className="object-cover" fill={true} loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" src={item.image} alt="banner image" />
         </div>
       </div>
     </div>

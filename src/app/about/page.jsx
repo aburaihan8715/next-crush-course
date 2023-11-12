@@ -2,6 +2,11 @@ import Image from "next/image";
 import React from "react";
 import LinkBtn from "@/ui/LinkBtn";
 
+export const metadata = {
+  title: "Next || About",
+  description: "Learning next js",
+};
+
 const About = () => {
   return (
     <div className="mb-10">

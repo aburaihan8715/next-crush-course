@@ -3,6 +3,11 @@ import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import contactImg from "../../../public/contact.png";
 
+export const metadata = {
+  title: "Next || contact",
+  description: "Learning next js",
+};
+
 const Contact = () => {
   return (
     <div>
