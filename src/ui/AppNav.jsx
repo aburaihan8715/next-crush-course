@@ -1,5 +1,6 @@
 "use client";
 import DarkModeToggler from "@/components/DarkModeToggler";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -40,6 +41,7 @@ const links = [
 const AppNav = () => {
   const path = usePathname();
   // console.log(path);
+  const session = useSession();
 
   return (
     <header>
@@ -61,9 +63,13 @@ const AppNav = () => {
             </li>
           ))}
         </ul>
-        <div className="flex items-center">
-          <button className="capitalize px-4 py-2 bg-green-700 rounded-md">logout</button>
-        </div>
+        {session.status === "authenticated" && (
+          <div className="flex items-center">
+            <button onClick={signOut} className="capitalize px-4 py-2 bg-green-700 rounded-md">
+              logout
+            </button>
+          </div>
+        )}
       </nav>
     </header>
   );
